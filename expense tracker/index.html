@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Expense Tracker - INR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+            <p class="tagline">Track your spending in Indian Rupees</p>
+        </header>
+
+        <div class="main-content">
+            <section class="form-section">
+                <h2>Add New Expense</h2>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="expense-name">Expense Name</label>
+                        <input type="text" id="expense-name" placeholder="e.g., Groceries, Coffee, etc." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-amount">Amount (₹)</label>
+                        <input type="number" id="expense-amount" placeholder="e.g., 500" min="0" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-category">Category</label>
+                        <select id="expense-category" required>
+                            <option value="">Select a category</option>
+                            <option value="Food">Food & Dining</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Transport">Transportation</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Bills">Bills & Utilities</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-date">Date</label>
+                        <input type="date" id="expense-date" required>
+                    </div>
+                    <button type="submit"><i class="fas fa-plus-circle"></i> Add Expense</button>
+                </form>
+            </section>
+
+            <section class="expenses-section">
+                <h2>Recent Expenses</h2>
+                <div class="expense-list" id="expense-list">
+                    <!-- Expenses will be added here dynamically -->
+                </div>
+            </section>
+        </div>
+
+        <section class="summary-section">
+            <h2>Expense Summary</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Expenses</h3>
+                    <p id="total-amount">₹0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>This Month</h3>
+                    <p id="month-amount">₹0</p>
+                </div>
+                <div class="summary-card total">
+                    <h3>Most Spent Category</h3>
+                    <p id="top-category">-</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Spending by Category</h2>
+            <div class="chart-container" id="category-chart">
+                <!-- Chart bars will be added here dynamically -->
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2023 Pink Expense Tracker | Manage your finances in INR</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
